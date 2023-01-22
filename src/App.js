@@ -26,6 +26,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { AuthInit } from "./core/Auth";
 import { LayoutSplashScreen } from "./core/SplashScreen";
+import CookieConsent from "react-cookie-consent";
 
 const App = () => {
   return (

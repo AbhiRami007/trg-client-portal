@@ -59,8 +59,8 @@ debugger
                         <td>
                           <span className="pl-2">{row.name}</span>
                         </td>
-                        <td> {row.phone ? row.phone : "Not Updated"}</td>
-                        <td> {row.email} </td>
+                        <td> {row.country ? row.country : "Not Updated"}</td>
+                        <td> {row.position? row.position:"Not Updated"} </td>
 
                         <td>
                           <button
