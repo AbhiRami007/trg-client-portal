@@ -31,10 +31,13 @@ export const GET_USER_IMAGE = `${API_URL_ADMIN}/profile`
 export const UPDATE_USER_IMAGE = `${API_URL_ADMIN}/profile`
 export const UPDATE_IMAGE_IN_DB = `${API_URL_ADMIN}/update`
 export const UPDATE_USER_DATA = `${API_URL_ADMIN}/update`
+export const GOOGLE_URL = `${API_URL_ADMIN}/google/login`;
 export const FORGOT_PASSWORD = `${API_URL_ADMIN}/forgot-password`
 export const CHECK_PASSWORD = `${API_URL_ADMIN}/check-password`
 export const GET_ALL_CANDIDATES = `${API_URL_ADMIN}/list`
+
 export const GET_USER_DOCS = `${API_URL_USER}/document`
+
 
 // Server should return AuthModel
 export function login(email, password) {
@@ -44,8 +47,12 @@ export function login(email, password) {
   },config)
 }
 
+export function googleLogin(code) {
+  return axios.get(GOOGLE_URL + "?code=" + code.code);
+}
+
 // Server should return AuthModel
-export function register(
+export function registerUser(
   email,
   name,
   password,
@@ -57,6 +64,7 @@ export function register(
     password,
     password_confirmation,
     role: 'client',
+    joined_on: new Date(),
   },config)
 }
 

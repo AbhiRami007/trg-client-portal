@@ -4,7 +4,7 @@ import SignInOptions from "../Shared/SignInOptions";
 import Modal from "../Shared/Modal";
 import Auth from "../Shared/Auth";
 import { useForm } from "react-hook-form";
-import { resendOtp, register, verifyEmailOtp } from "../../requests/Auth";
+import { resendOtp, registerUser, verifyEmailOtp } from "../../requests/Auth";
 import OtpInput from "../Shared/OtpInput";
 import { useAuth } from "../../core/Auth";
 import { toast, ToastContainer } from "react-toastify";
@@ -63,7 +63,7 @@ function SignUp() {
 
   const onSubmit = async (data) => {
     try {
-      const auth = await register(data);
+      const auth = await registerUser(data);
       setEmail(data.email);
       setPass(data.password);
       saveAuth(auth);

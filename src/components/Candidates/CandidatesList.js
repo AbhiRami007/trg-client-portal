@@ -15,7 +15,7 @@ function CandidateList(props) {
   const [user, setUser] = useState([]);
   const [docs, setDocs] = useState([]);
   let ids = localStorage.getItem("ids");
-  const userId = JSON.parse(localStorage.getItem("user-information")).userId;
+  const userId = JSON.parse(localStorage.getItem("user-information")).user.id;
   useEffect(() => {
     const getUser = async () => {
       if (ids) {

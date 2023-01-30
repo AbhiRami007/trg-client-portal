@@ -14,6 +14,7 @@ import App from "../App";
 import { ErrorsPage } from "../components/Errors/ErrorsPage";
 // import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Logout } from "../components/Auth/Logout";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 const { PUBLIC_URL } = process.env;
 
 const AppRoutes = () => {
@@ -30,7 +31,9 @@ const AppRoutes = () => {
       <Routes>
         <Route
           element={
-            <App />
+            <GoogleOAuthProvider clientId="395250203486-oiovkpbqhhf6muc7l8boimv3bf292bs6.apps.googleusercontent.com">
+              <App />
+            </GoogleOAuthProvider>
           }
         >
           <Route path="error/*" element={<ErrorsPage />} />
